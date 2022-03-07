@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+    <title>Document</title>
+</head>
+<body>   
+    <section>
+        <div id="read_List">
+            <h1 id="salida">Prest zaude?</h1>
+        </div>
+        <button onclick="displayStart();">PLAY</button>
+    </section>
+    <section>
+      <h3> HITZ MINUTURO: </h3>
+          <input type="number" id="ppp" placeholder="palabras por minuto">
+          <button onclick="saveValue()">SAVE</button>
+    </section>
+    <script>
+        texto1 = "I can't believe the news today. Oh I can't close my eyes and make it go away";
+        textArray  = texto1.split(" ");
+        palabra = 0;
+
+        function saveValue(){
+          var ppp = document.getElementById("ppp").value;
+        }
+        function displayStart() {
+          display = setInterval(function(){
+          document.getElementById("salida").innerHTML = textArray[palabra]; 
+              if(palabra >= textArray.length -1) {  
+                clearInterval(display);
+              } else {
+                palabra ++;
+              }
+            }, ppp.value )  
+          };
+    </script>       
+</body>
+<style>
+    body {
+      text-align: center;
+    }
+    section{
+      margin: 1.5em;
+      border: 0.3em solid rgba(0, 0, 255, 0.26);
+      padding: 1.5em;
+    }
+</style>
+</html>

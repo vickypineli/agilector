@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+       
+    <section>
+        <div id="read_List">
+            <h1 id="salida"></h1>
+        </div>
+        <button onclick="textStart();">PLAY</button>
+        <button onclick="textStop();">PAUSE</button> 
+    </section>
+    <section>
+    <form>
+        <h3> AUKERATU TESTUA: </h3>
+            <input type="checkbox" id="TESTUA">1-ingles
+            <input type="checkbox" id="TESTUA">2-euskera
+            <input type="checkbox" id="TESTUA">3-castellano  
+       
+        <h3> HITZ MINUTURO: </h3>
+            <input type="number" id="ppp" value="3000">
+        
+        <h3> TIPO DE LETRA:</h3>
+            <input type="checkbox" id="fuente">Arial
+            <input type="checkbox" id="fuente">Escolar
+            <input type="checkbox" id="fuente">Dislexia  
+    </form>
+    <form>
+        <button type="button" onclick="saveValues()">
+            SAVE
+        </button>
+    </form>  
+</section> 
+    <script>
+        var texto1 = "I can't believe the news today. Oh I can't close my eyes and make it go away";
+        var textArray  = texto1.split(" ");
+
+        palabra = 0;
+       
+        saveValues = function (){
+             fuente = document.getElementById("fuente").value;
+             texto = document.getElementById("texto").value;
+             ppp = document.getElementById("ppp").value;
+             lector = document.getElementById("lector").value;
+            console.log(fuente+""+ 
+            texto+" "+ ppp+ " "+ lector);
+        }
+        function textStart() {
+            play = setInterval(textInDisplay,400);
+            
+        }
+        function textStop() {
+            pause = clearInterval(textInDisplay);
+        }
+        function textInDisplay() {
+            document.getElementById("salida").innerHTML = textArray[palabra];                             
+            if(palabra >= textArray.length -1){       
+                clearInterval(textInDisplay);
+            }else{
+                palabra++; 
+            } 
+    }; 
+    </script>       
+</body>
+<style>
+    body {
+      text-align: center;
+    }
+    section{
+      margin: 1.5em;
+      border: 0.3em solid red;
+      padding: 1.5em;
+    }
+</style>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="setintervalcambiodecolor">
+        <div id="mi_mensaje">
+          <h1>¡KAIXO MUNDU!</h1>
+        </div>
+        <button onclick="cambioDeColor();">PLAY</button>
+        <button onclick="detenerCambioDeColor();">PAUSE</button>
+    </section>
+  <script>
+    function cambioDeColor() {
+      playLetrero = setInterval(flasheaTexto, 500);
+    }
+    function flasheaTexto() {
+      var oElem = document.getElementById('mi_mensaje');
+      oElem.style.color = oElem.style.color == 'red' ? 'blue' : 'red';
+      //oElem.style.color ... es un operador ternario o condicional
+    }
+    function detenerCambioDeColor() {
+      StopLetrero = clearInterval(playLetrero);
+    };
+  </script>            
+</body>
+<style>
+    body {
+  text-align: center;
+}
+section{
+  margin: 1.5em;
+  border: 0.3em solid rgba(0, 0, 255, 0.26);
+  padding: 1.5em;
+
+}
+article {
+  border: 0.2em dotted gray;
+  padding: 20px 20px 20px 20px;
+}
+#screen {
+margin: 0.1em;
+
+font-size: 2em;
+}
+button{
+  font-size: 1.5em;
+}
+</style>
+</html>
