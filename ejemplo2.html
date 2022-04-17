@@ -45,16 +45,15 @@
         palabra = 0;
        
         saveValues = function (){
-             fuente = document.getElementById("fuente").value;
-             texto = document.getElementById("texto").value;
-             ppp = document.getElementById("ppp").value;
-             lector = document.getElementById("lector").value;
+            fuente = document.getElementById("fuente").value;
+            texto = document.getElementById("texto").value;
+            ppp = document.getElementById("ppp").value;
+            lector = document.getElementById("lector").value;
             console.log(fuente+""+ 
             texto+" "+ ppp+ " "+ lector);
         }
         function textStart() {
             play = setInterval(textInDisplay,400);
-            
         }
         function textStop() {
             pause = clearInterval(textInDisplay);

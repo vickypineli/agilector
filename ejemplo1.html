@@ -14,6 +14,8 @@
             <h1 id="salida">Prest zaude?</h1>
         </div>
         <button onclick="displayStart();">PLAY</button>
+        <button onclick="displayStart();">PAUSE</button>
+
     </section>
     <section>
       <h3> HITZ MINUTURO: </h3>
@@ -37,7 +39,10 @@
                 palabra++;
               }
             }, ppp.value )  
-          };
+          }
+          function displayStop() {
+              clearInterval(display);
+          }
     </script>       
 </body>
 <style>
